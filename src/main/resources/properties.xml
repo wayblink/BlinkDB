@@ -1,3 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<root>C://blinkdb</root>
+<configuration>
+
+    <property>
+        <description>dir path to store the entire data for blinkdb</description>
+        <name>database.root.dir</name>
+        <value>D:\blinkdb\</value>
+    </property>
+
+</configuration>

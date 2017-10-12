@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class IReader {
 
     public static void main(String[] args){
-        String fileName = "D:/test.txt";
+        String fileName = "../resources/book.xml";
         ArrayList<String> dataList = readFile(fileName);
         System.out.println(dataList.size());
         for(int i =0;i< dataList.size();i++){
