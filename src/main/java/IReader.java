@@ -37,6 +37,7 @@ public class IReader {
         return resultList;
     }
 
+    //以下暂时不用
     public static void readByBufferedReader(String fileName) {
         try {
             File file = new File(fileName);

@@ -1,8 +1,9 @@
+package conf;
+
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
-import org.dom4j.Attribute;
 
 import java.io.File;
 import java.util.HashMap;
@@ -29,7 +30,7 @@ public class Configuration {
         private static final Configuration INSTANCE = new Configuration();
     }
 
-    public static final Configuration getInstance() {
+    public static Configuration getInstance() {
         return SingletonHolder.INSTANCE;
     }
 
@@ -59,7 +60,7 @@ public class Configuration {
         return propertyMap;
     }
 
-    public void setPropertyMap(Map<String, String> propertyMap) {
-        this.propertyMap = propertyMap;
+    public String getProperty(String key){
+        return propertyMap.get(key);
     }
 }
