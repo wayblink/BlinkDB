@@ -13,6 +13,7 @@ import java.io.File;
 
 public class CreateDBTest {
 
+    private Configuration conf = Configuration.getInstance();
     @Before
     public void setUp() throws Exception {
 
@@ -20,14 +21,14 @@ public class CreateDBTest {
 
     @After
     public void cleanUp() throws Exception {
-        FileUtil.delFolder(Configuration.getInstance().getProperty(ConfigKeys.DATABASE_ROOT_DIR) + File.separator + "testdb");
+        FileUtil.delFolder(conf.getProperty(ConfigKeys.DATABASE_ROOT_DIR) + File.separator + "testdb");
     }
 
     @Test
     public void testCreateDB() {
         boolean isSuccess = false;
         try {
-            isSuccess = CreateDB.execute("testDb");
+            isSuccess = CreateDB.execute(conf.getProperty(ConfigKeys.DATABASE_ROOT_DIR) + File.separator + "testdb");
         } catch (Exception e) {
             e.printStackTrace();
         }

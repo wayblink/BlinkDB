@@ -1,10 +1,42 @@
+package util;
+
 import java.io.*;
+import java.util.List;
 
 /**
  * Created by reus on 2017/10/12.
  * Base interface to write files
  */
 public class IWriter {
+
+    public static void writeString(String content,File file){
+        try {
+            FileWriter fw = new FileWriter(file, true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write(content);
+            bw.flush();
+            bw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void writeStringList(List<String> content, File file){
+        try {
+            FileWriter fw = new FileWriter(file, true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            for(int i = 0; i<content.size();i++){
+                bw.write(content.get(i) + "\n");
+            }
+            bw.flush();
+            bw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
     public void writeByFileOutputStream() {
 
         FileOutputStream fop = null;

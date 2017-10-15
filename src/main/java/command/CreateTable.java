@@ -1,7 +1,14 @@
 package command;
 
-/**
- * Created by reus on 2017/10/13.
- */
+import conf.ConfigKeys;
+import conf.Configuration;
+import util.FileUtil;
+
+import java.io.File;
+
 public class CreateTable {
+
+    public static boolean execute(String path){
+        return FileUtil.newFile(path);
+    }
 }

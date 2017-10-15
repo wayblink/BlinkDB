@@ -19,8 +19,8 @@ public  class  FileUtil  {
     public static  boolean  newFolder(String folderPath)  {
         File  myFolderPath  =  new  File(folderPath);
         if  (!myFolderPath.exists())  {
-            String parentFolderPath=myFolderPath.getParent();
-            File parentFolder=new File(parentFolderPath);
+            String parentFolderPath = myFolderPath.getParent();
+            File parentFolder = new File(parentFolderPath);
             if(!parentFolder.exists()){
                 newFolder(parentFolderPath);
             }
@@ -38,8 +38,8 @@ public  class  FileUtil  {
         File  myFilePath  =  new  File(filePath);
         try  {
             if  (!myFilePath.exists())  {
-                String parentFolderPath=myFilePath.getParent();
-                File parentFolder=new File(parentFolderPath);
+                String parentFolderPath = myFilePath.getParent();
+                File parentFolder = new File(parentFolderPath);
                 if(!parentFolder.exists()){
                     newFolder(parentFolderPath);
                 }

@@ -1,5 +1,8 @@
+package util;
+
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by reus on 2017/10/12.
@@ -7,18 +10,25 @@ import java.util.ArrayList;
  */
 public class IReader {
 
-    public static void main(String[] args){
-        String fileName = "../resources/book.xml";
-        ArrayList<String> dataList = readFile(fileName);
-        System.out.println(dataList.size());
-        for(int i =0;i< dataList.size();i++){
-            System.out.println(dataList.get(i));
+    public static String readAsString(String filePath) {
+            String str="";
+            File file=new File(filePath);
+            try {
+                FileInputStream in=new FileInputStream(file);
+                // size  为字串的长度 ，这里一次性读完
+                int size=in.available();
+                byte[] buffer=new byte[size];
+                in.read(buffer);
+                in.close();
+                str=new String(buffer);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return str;
         }
 
-    }
-
-    public static ArrayList<String> readFile(String filePath){
-        ArrayList<String> resultList = new ArrayList<String>();
+    public static List<String> readAsList(String filePath){
+        List<String> resultList = new ArrayList<String>();
         try {
             File file = new File(filePath);
             // 读取文件，并且以utf-8的形式写出去

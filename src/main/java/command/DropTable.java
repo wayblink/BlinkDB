@@ -1,7 +1,10 @@
 package command;
 
-/**
- * Created by reus on 2017/10/13.
- */
+import util.FileUtil;
+
 public class DropTable {
+
+    public static boolean execute(String path) throws Exception {
+        return FileUtil.delFile(path);
+    }
 }
